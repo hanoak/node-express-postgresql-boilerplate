@@ -1,6 +1,6 @@
 const axios = require("axios");
 const utils = require("./index.js");
-const config = require("../config/index.js");
+const config = require("../config");
 
 const makeApiCall = async ({
   url,
