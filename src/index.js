@@ -8,6 +8,7 @@ const constants = require("./constants");
 
 const requestHeadersMiddleware = require("./middlewares/req-header.middleware");
 const unmatchedRoutesMiddleware = require("./middlewares/unmatched-routes.middleware");
+const errorMiddleware = require("./middlewares/error.middleware");
 
 try {
   const PORT = config.PORT || 5000;
@@ -27,6 +28,9 @@ try {
 
   //For unmatched route patterns
   app.use(unmatchedRoutesMiddleware);
+
+  //Global error handler middleware
+  app.use(errorMiddleware);
 
   app.listen(PORT, () => {
     console.info(`Serve started at port: ${PORT}`);
