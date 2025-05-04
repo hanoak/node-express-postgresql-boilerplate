@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "About A simple production-grade express.js app with postgresql &amp; sequelize",
   "main": "src/index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:fix": "eslint --fix ./*.js",
@@ -47,5 +47,8 @@
     "hooks": {
       "pre-commit": "npm run precommit"
     }
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
