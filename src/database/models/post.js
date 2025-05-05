@@ -18,6 +18,14 @@ module.exports = (sequelize, DataTypes) => {
   }
   Post.init(
     {
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+          len: [3, 50],
+        },
+      },
       body: {
         type: DataTypes.STRING,
         allowNull: false,

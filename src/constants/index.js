@@ -6,6 +6,10 @@ const constants = {
     INTERNAL_ERROR:
       "Something went wrong while processing your request, please try again.",
     ROUTE_ERROR: "Sorry, the requested resource is not available.",
+    USER_NOT_FOUND: "User not found",
+    USER_DELETED: "User deleted successfully",
+    POST_NOT_FOUND: "Post not found",
+    POST_DELETED: "Post deleted successfully",
   },
   ERROR_CLASSES: {
     UNAUT_ERR: "UnauthorizedError",

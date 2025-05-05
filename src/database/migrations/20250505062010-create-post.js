@@ -10,6 +10,10 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       body: {
         type: DataTypes.STRING,
         allowNull: false,

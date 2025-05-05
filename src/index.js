@@ -12,6 +12,9 @@ const errorMiddleware = require("./middlewares/error.middleware");
 
 const { sequelize } = require("./database/models");
 
+const userRoutes = require("./routes/users.routes");
+const postRoutes = require("./routes/posts.routes");
+
 try {
   const PORT = config.PORT || 5000;
   const app = express();
@@ -27,6 +30,8 @@ try {
   });
 
   //Add your app's routes here
+  app.use("/api/v1/users", userRoutes);
+  app.use("/api/v1/posts", postRoutes);
 
   //For unmatched route patterns
   app.use(unmatchedRoutesMiddleware);
