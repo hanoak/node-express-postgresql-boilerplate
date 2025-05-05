@@ -10,17 +10,26 @@ const pool = {
 // configuration for the database connection based on the environment (development, test, production)
 module.exports = {
   development: {
-    use_env_variable: config.DB_URL,
+    username: config.DB_USERNAME,
+    password: config.DB_PASSWORD,
+    database: config.DB_NAME,
+    host: config.DB_HOST,
     dialect: "postgres",
     pool,
   },
   test: {
-    use_env_variable: config.DB_URL,
+    username: config.DB_USERNAME,
+    password: config.DB_PASSWORD,
+    database: config.DB_NAME,
+    host: config.DB_HOST,
     dialect: "postgres",
     pool,
   },
   production: {
-    use_env_variable: config.DB_URL,
+    username: config.DB_USERNAME,
+    password: config.DB_PASSWORD,
+    database: config.DB_NAME,
+    host: config.DB_HOST,
     dialect: "postgres",
     pool,
     dialectOptions: {
