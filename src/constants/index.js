@@ -32,6 +32,7 @@ const constants = {
   LOGS: {
     APP_ERROR: "Error while starting the server.",
     ROUTE_ERROR: "Sorry, the requested resource is not available.",
+    DB_CONNECTED: "Database connected",
   },
 };
 

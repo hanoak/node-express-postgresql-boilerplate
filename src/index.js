@@ -10,6 +10,8 @@ const requestHeadersMiddleware = require("./middlewares/req-header.middleware");
 const unmatchedRoutesMiddleware = require("./middlewares/unmatched-routes.middleware");
 const errorMiddleware = require("./middlewares/error.middleware");
 
+const { sequelize } = require("./database/models");
+
 try {
   const PORT = config.PORT || 5000;
   const app = express();
@@ -32,8 +34,11 @@ try {
   //Global error handler middleware
   app.use(errorMiddleware);
 
-  app.listen(PORT, () => {
+  app.listen(PORT, async () => {
     console.info(`Serve started at port: ${PORT}`);
+
+    await sequelize.authenticate();
+    console.log(constants.LOGS.DB_CONNECTED);
   });
 } catch (e) {
   console.error(constants.LOGS.APP_ERROR);
