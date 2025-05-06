@@ -5,7 +5,8 @@ const {
 } = require("../errors/custom-errors.utils.js");
 const { sequelize, User } = require("../database/models");
 const { Transaction } = require("sequelize");
-const { HTTP_TEXTS } = require("../constants/index.js");
+const { HTTP_TEXTS } = require("../constants");
+const logger = require("../logger");
 
 const getAllUsers = async () => {
   try {
@@ -22,7 +23,7 @@ const getAllUsers = async () => {
 
     return users;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
     throw new InternalServerError();
   }
 };
@@ -44,7 +45,7 @@ const getUserById = async (id) => {
     );
     return users;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
 
     if (err instanceof AppError) throw err;
 
@@ -58,7 +59,7 @@ const addUser = async (body) => {
     const user = await User.create({ name, email, role });
     return user;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
     throw new InternalServerError();
   }
 };
@@ -90,7 +91,7 @@ const updateUser = async (id, body) => {
 
     return user;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
 
     if (err instanceof AppError) throw err;
 
@@ -116,7 +117,7 @@ const deleteUser = async (id) => {
 
     return result;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
 
     if (err instanceof AppError) throw err;
 

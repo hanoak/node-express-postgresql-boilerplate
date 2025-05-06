@@ -5,7 +5,8 @@ const {
 } = require("../errors/custom-errors.utils.js");
 const { sequelize, Post, User } = require("../database/models");
 const { Transaction } = require("sequelize");
-const { HTTP_TEXTS } = require("../constants/index.js");
+const { HTTP_TEXTS } = require("../constants");
+const logger = require("../logger");
 
 const getAllPosts = async () => {
   try {
@@ -19,7 +20,7 @@ const getAllPosts = async () => {
 
     return posts;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
     throw new InternalServerError();
   }
 };
@@ -41,7 +42,7 @@ const getPostById = async (postId) => {
     );
     return post;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
 
     if (err instanceof AppError) throw err;
 
@@ -59,7 +60,7 @@ const addPost = async (userId, body) => {
     const post = await Post.create({ title, body: postBody, userId: user.id });
     return post;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
 
     if (err instanceof AppError) throw err;
 
@@ -93,7 +94,7 @@ const updatePost = async (postId, body) => {
 
     return post;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
 
     if (err instanceof AppError) throw err;
 
@@ -119,7 +120,7 @@ const deletePost = async (postId) => {
 
     return result;
   } catch (err) {
-    console.error(err);
+    logger.error(err);
 
     if (err instanceof AppError) throw err;
 

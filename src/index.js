@@ -5,6 +5,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const config = require("./config");
 const constants = require("./constants");
+const logger = require("./logger");
 
 const requestHeadersMiddleware = require("./middlewares/req-header.middleware");
 const unmatchedRoutesMiddleware = require("./middlewares/unmatched-routes.middleware");
@@ -40,12 +41,12 @@ try {
   app.use(errorMiddleware);
 
   app.listen(PORT, async () => {
-    console.info(`Serve started at port: ${PORT}`);
+    logger.info(`Serve started at port: ${PORT}`);
 
     await sequelize.authenticate();
-    console.log(constants.LOGS.DB_CONNECTED);
+    logger.info(constants.LOGS.DB_CONNECTED);
   });
 } catch (e) {
-  console.error(constants.LOGS.APP_ERROR);
-  console.error(e);
+  logger.error(constants.LOGS.APP_ERROR);
+  logger.error(e);
 }
