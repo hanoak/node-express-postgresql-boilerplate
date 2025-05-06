@@ -30,8 +30,10 @@ try {
     res.status(200).send({ msg: "Hello, world!" });
   });
 
-  //Add your app's routes here
+  // User routes
   app.use("/api/v1/users", userRoutes);
+
+  // Post routes
   app.use("/api/v1/posts", postRoutes);
 
   //For unmatched route patterns
