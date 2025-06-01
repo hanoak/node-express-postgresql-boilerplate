@@ -1,0 +1,32 @@
+Simulation started at: 2025-06-01 16:11:22
+Request #1: Status 200, Time 0.042078s
+Request #3: Status 200, Time 0.038459s
+Request #2: Status 200, Time 0.042070s
+Request #5: Status 200, Time 0.002493s
+Request #4: Status 200, Time 0.003407s
+Request #6: Status 200, Time 0.001847s
+Request #8: Status 200, Time 0.004244s
+Request #7: Status 200, Time 0.004052s
+Request #9: Status 200, Time 0.004064s
+Request #11: Status 200, Time 0.001868s
+Request #10: Status 200, Time 0.003156s
+Request #12: Status 200, Time 0.002709s
+Request #13: Status 200, Time 0.002655s
+Request #14: Status 200, Time 0.002514s
+Request #15: Status 200, Time 0.002784s
+Request #17: Status 200, Time 0.001897s
+Request #16: Status 200, Time 0.002276s
+Request #18: Status 200, Time 0.002428s
+Request #20: Status 200, Time 0.001933s
+Request #19: Status 200, Time 0.002037s
+Simulation completed at: 2025-06-01 16:11:22
+
+Summary:
+--------------------
+Total Requests: 20
+Successful Requests: 0
+Failed Requests: 0
+Total Time Taken (requests only): 0s
+Actual Script Runtime: 0s
+Average Time Per Request: 0s
+--------------------

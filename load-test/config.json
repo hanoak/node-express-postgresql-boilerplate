@@ -1,0 +1,10 @@
+{
+  "url": "localhost:5000/api/v1/posts",
+  "method": "GET",
+  "payload": "{\"key\":\"value\"}",
+  "headers": ["Content-Type: application/json", "Authorization: Bearer abc123"],
+  "log_file": "load-test/requests_log.txt",
+  "num_requests": 20,
+  "duration": "10s",
+  "concurrent_requests": 3
+}
