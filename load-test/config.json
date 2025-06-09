@@ -1,10 +1,10 @@
 {
-  "url": "localhost:5000/api/v1/posts",
+  "url": "localhost:5000/api/v1/concurrency/count/fixed-3/590a37d2-8d66-429e-b850-43524dc163cc",
   "method": "GET",
   "payload": "{\"key\":\"value\"}",
   "headers": ["Content-Type: application/json", "Authorization: Bearer abc123"],
   "log_file": "load-test/requests_log.txt",
-  "num_requests": 20,
-  "duration": "10s",
-  "concurrent_requests": 3
+  "num_requests": 10,
+  "duration": "1s",
+  "concurrent_requests": 10
 }

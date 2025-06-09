@@ -15,6 +15,7 @@ const { sequelize } = require("./database/models");
 
 const userRoutes = require("./routes/users.routes");
 const postRoutes = require("./routes/posts.routes");
+const concurrencyRoutes = require("./routes/concurrency.routes");
 
 try {
   const PORT = config.PORT || 5000;
@@ -35,6 +36,9 @@ try {
 
   // Post routes
   app.use("/api/v1/posts", postRoutes);
+
+  // Concurrency routes
+  app.use("/api/v1/concurrency", concurrencyRoutes);
 
   //For unmatched route patterns
   app.use(unmatchedRoutesMiddleware);

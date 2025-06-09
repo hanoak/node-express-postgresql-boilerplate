@@ -29,6 +29,13 @@ module.exports = {
         allowNull: false,
         defaultValue: "user",
       },
+      visits: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        validate: {
+          min: 0,
+        },
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
