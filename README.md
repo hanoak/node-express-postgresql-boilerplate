@@ -53,7 +53,10 @@ Environmental variables can be found in /.env.example:
 
     PORT=5000
     NODE_ENV=development
-    MONGODB_URI=
+    DB_USERNAME=
+    DB_PASSWORD=
+    DB_NAME=
+    DB_HOST=
 
 ## Routes
 
