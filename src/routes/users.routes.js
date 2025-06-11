@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const UsersController = require("../controllers/users.controller.js");
-const uuidValidator = require("../validators/uuid.validator.js");
+const uuidValidator = require("../middlewares/uuid-validator.middleware.js");
 const validators = require("../validators");
 
 const router = Router({ mergeParams: true });
